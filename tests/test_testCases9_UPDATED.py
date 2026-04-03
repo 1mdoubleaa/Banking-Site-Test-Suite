@@ -9,7 +9,7 @@
 
 # import the selenium web driver 
 import unittest
-from selenium import webdriver
+from browser_utils import get_driver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.support.ui import WebDriverWait
@@ -26,7 +26,7 @@ class NewAccount(unittest.TestCase):
     @classmethod    
     def setUpClass(cls):
         # open the browser
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         # Include a try & except for browser
         cls.driver.get("https://demo.guru99.com/V4/") # link 
@@ -276,7 +276,7 @@ class EditAccount(unittest.TestCase):
     @classmethod    
     def setUpClass(cls):
         # open the browser
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         # Include a try & except for browser
         cls.driver.get("https://demo.guru99.com/V4/") # link 
@@ -443,7 +443,7 @@ class DeleteAccount(unittest.TestCase):
     @classmethod    
     def setUpClass(cls):
         # open the browser
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         # Include a try & except for browser
         cls.driver.get("https://demo.guru99.com/V4/") # link 

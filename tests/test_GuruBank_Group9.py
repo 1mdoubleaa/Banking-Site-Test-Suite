@@ -6,7 +6,7 @@
 
 # Importing the necessary modules to set up unit tests with Selenium webdriver.
 import unittest
-from selenium import webdriver
+from browser_utils import get_driver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -30,7 +30,7 @@ class NewCustomer(unittest.TestCase):
 
     # Setting up tests by maximizing the window, navigating to the website, and logging in as manager.
     def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         cls.driver.get("https://demo.guru99.com/V4/")
         cls.driver.find_element("name", "uid").send_keys("mngr517721")
@@ -426,7 +426,7 @@ class NewCustomer(unittest.TestCase):
 class EditCustomer(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         cls.driver.get("https://demo.guru99.com/V4/")
         cls.driver.find_element("name", "uid").send_keys("mngr517721")
@@ -791,7 +791,7 @@ class EditCustomer(unittest.TestCase):
 class DeleteCustomer(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         cls.driver.get("https://demo.guru99.com/V4/")
         cls.driver.find_element("name", "uid").send_keys("mngr517721")
@@ -940,7 +940,7 @@ class NewAccount(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # open the browser
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         # Include a try & except for browser
         cls.driver.get("https://demo.guru99.com/V4/")  # link
@@ -1196,7 +1196,7 @@ class EditAccount(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # open the browser
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         # Include a try & except for browser
         cls.driver.get("https://demo.guru99.com/V4/")  # link
@@ -1331,7 +1331,7 @@ class DeleteAccount(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # open the browser
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         # Include a try & except for browser
         cls.driver.get("https://demo.guru99.com/V4/")  # link
@@ -1470,7 +1470,7 @@ class DeleteAccount(unittest.TestCase):
 class BalanceEnquiry(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         cls.driver.get("https://demo.guru99.com/V4/")
         time.sleep(3)
@@ -1599,7 +1599,7 @@ class BalanceEnquiry(unittest.TestCase):
 class MiniStatement(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         cls.driver.get("https://demo.guru99.com/V4/")
         time.sleep(3)
@@ -1725,7 +1725,7 @@ class MiniStatement(unittest.TestCase):
 class CustomizedStatement(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
+        cls.driver = get_driver()
         cls.driver.maximize_window()
         cls.driver.get("https://demo.guru99.com/V4/")
         time.sleep(3)
@@ -1989,4 +1989,4 @@ class CustomizedStatement(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()
