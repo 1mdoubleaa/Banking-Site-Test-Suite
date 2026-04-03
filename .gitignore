@@ -1,0 +1,8 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Selenium / WebDriver logs
+geckodriver.log
+*.log
